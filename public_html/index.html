@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Proyecto Final Algoritmos </title>
+	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+ 
+    <link href="materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+	
+		<!--Import Google Icon Font-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"> </script>
+	<script src="js/index.js" type="text/javascript"> </script>
+	<script src="js/anime/anime.min.js" type="text/javascript"> </script>
+	<script src="js/animacion.js" type="text/javascript"> </script>
+	<script src="js/validetta/validetta.min.js" type="text/javascript"> </script>
+	<script src="js/events.js" type="text/javascript"> </script>
+	
+	<script type="text/javascript">
+		window.onload = execEvents;
+	</script>
+
+	
+</head>
+<body background="imgs/fondo1.jpg">
+
+    <main class="valign-wrapper">
+			
+		<div style="width: 500px" class="col input-field right_moved_max grey lighten-3">
+		    <hr size="2" color="green">
+			<h4 style="color:green"> &nbsp;&nbsp; Algoritmo LCS &nbsp;</h4>
+			<h6 style='padding-left:10px'><b> Pseudocodigo: </b></h6> 
+				<span class="code" style='padding-left:10px' id="ini_cod">   def LCS(S1, S2, x, y) :               <br> </span>
+				<span class="code" style='padding-left:20px' id="cond1_cod">      if ( (x == -1) or (y == -1) )    <br> </span>
+				<span class="code" style='padding-left:40px' id="res1_cod">        return 0                        <br> </span>
+				<span class="code" style='padding-left:20px' id="cond2_cod">      else if (S1[x] == S2[y])         <br> </span>
+				<span class="code" style='padding-left:40px' id="res2_cod">        return 1 + LCS(S1, S2, x-1, y-1)<br> </span>
+				<span class="code" style='padding-left:20px' id="cond3_cod">      else							    <br> </span>
+				<span class="code" style='padding-left:40px' id="res3_cod">        return max( LCS(S1, S2, x-1, y) , LCS(S1, S2, x, y-1) );  <br> </span>
+			<hr size="2" color="green">
+		</div>
+        <div class="container left_moved_max">		
+			<div class="col 12 m6 offset-m3 input-field">
+                <form id="formRegistroU" autocomplete="off" onsubmit="return false" method="get">
+                    <center>
+					<div class="container grey lighten-4"> 
+							
+						<div class="bottom_moved">
+							<h5> Escribe las cadenas que quieres comparar: </h5>
+						</div>
+						<div class="col s12 m6 offset-m3 input-field">
+                                                    <label for="cad1" style="color:darkgreen"><b>Cadena 1: </b></label>
+							<input type="text" id="cad1" name="cad1" style="width:90%" data-validetta="required,minLength[1],maxLength[9]">
+						</div>
+						<div class="col s12 m6 offset-m3 input-field">
+                                                    <label for="cad2" style="color:darkgreen"><b>Cadena 2: </b></label>
+							<input type="text" id="cad2" name="cad2" style="width:90%" data-validetta="required,minLength[1],maxLength[9]">
+						</div>
+						<div class="col s12 m6 offset-m3 input-field">
+						
+							<button id="btn_Ins" type="submit" class="btn font-size: 3em; color: green left_moved">Instrucciones</button>
+							
+							<button type="submit" id="btn_begin" class="btn green lighten-1 top_moved">Reiniciar</button>
+
+							<button id="btn_Sig" type="submit" class="btn font-size: 3em; color: green right_moved play-strokeWidth">
+							<i class="fas fa-arrow-alt-circle-right   fa-2x"></i>
+							</button>
+
+							
+					<!--	<button type="submit" id="btn-next" class="btn grey">Paso siguiente</button> -->
+						</div>
+						<hr size="2" color="black">
+					</div>
+					</center>
+				</form>
+			</div>
+			
+			<div class="col s16 m6 offset-m3 input-field">
+				<div class="container green lighten-2" id="dp_table">
+				<div class="center-align bottom_moved">
+					<h5>
+						Tabla de programación dinámica
+					</h5>
+				</div>
+				<table>
+
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+
+				</table>
+				<hr size="2" color="black">
+				</div>
+			</div>
+        </div> 
+    </main>
+
+
+    <footer class="page-footer green darken-3">
+        <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright / Emmanuel Maya & Karla Silva
+            </div>
+        </div>
+    </footer>
+
+    <script src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
